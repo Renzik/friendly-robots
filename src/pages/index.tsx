@@ -2,8 +2,8 @@ import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   return (
-    <div>
-      Hello world!
+    <div className='text-2xl font-bold'>
+      Hello world! ??
     </div>
   )
 }
