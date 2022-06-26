@@ -1,9 +1,8 @@
 import { trpc } from "@/utils/trpc";
 import type { NextPage } from "next";
-import { prisma } from "@/db/client";
 
 const Home: NextPage = (props: any) => {
-  const { data, isLoading } = trpc.useQuery(["getAllRobots"]);
+  const { data, isLoading } = trpc.useQuery(["robots.getAll"]);
 
   if (isLoading || !data) return <div>Loading...</div>;
 
