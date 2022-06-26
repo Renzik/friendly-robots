@@ -1,7 +1,8 @@
+import AppLayout from "@/components/layouts/AppLayout";
 import { trpc } from "@/utils/trpc";
-import type { NextPage } from "next";
+import { NextPageWithLayout } from "./_app";
 
-const Home: NextPage = (props: any) => {
+const Home: NextPageWithLayout = () => {
   const { data, isLoading } = trpc.useQuery(["robots.getAll"]);
 
   if (isLoading || !data) return <div>Loading...</div>;
@@ -12,5 +13,7 @@ const Home: NextPage = (props: any) => {
     </div>
   );
 };
+
+Home.layout = AppLayout;
 
 export default Home;
