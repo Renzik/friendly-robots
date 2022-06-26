@@ -18,7 +18,13 @@
     // incremental stores cache for faster compiling.
     "incremental": false,
     // Turning on noUncheckedIndexedAccess will add undefined to any un-declared field in the type.
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

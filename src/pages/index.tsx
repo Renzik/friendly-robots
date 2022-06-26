@@ -1,11 +1,12 @@
-import type { NextPage } from 'next'
+import { trpc } from "@/utils/trpc";
+import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  return (
-    <div className='text-2xl font-bold'>
-      Hello world! ??
-    </div>
-  )
-}
+  const { data, isLoading } = trpc.useQuery(["hello"]);
 
-export default Home
+  if (isLoading || !data) return <div>Loading...</div>;
+
+  return <div className="text-2xl font-bold">Hello world!</div>;
+};
+
+export default Home;
