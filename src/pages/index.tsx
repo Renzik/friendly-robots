@@ -5,7 +5,7 @@ import { prisma } from "@/db/client";
 const Home: NextPage = (props: any) => {
   const { data, isLoading } = trpc.useQuery(["hello"]);
 
-  if (isLoading || !data) return <div>Loading...</div>;
+  // if (isLoading || !data) return <div>Loading...</div>;
 
   return <div className="text-2xl font-bold">{props.robots}</div>;
 };
