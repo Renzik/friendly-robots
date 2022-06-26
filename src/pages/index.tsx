@@ -6,7 +6,7 @@ const Home: NextPage = () => {
 
   if (isLoading || !data) return <div>Loading...</div>;
 
-  return <div className="text-2xl font-bold">Hello world!</div>;
+  return <div className="text-2xl font-bold">{data.greeting}</div>;
 };
 
 export default Home;
